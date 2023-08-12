@@ -37,6 +37,13 @@ export const ProductsProvider = ({ children }) => {
     });
   };
 
+  const addNewProduct = (productData) => {
+    dispatch({
+      type: actionTypes.ADD_NEW_PRODUCT,
+      payload: [productData, ...state.productsList],
+    });
+  };
+
   const findProductById = (productId) =>
     state.productsList.find(({ id }) => Number(id) === Number(productId));
 
@@ -61,6 +68,7 @@ export const ProductsProvider = ({ children }) => {
         updateIsLowStock,
         updateSortBy,
         findProductById,
+        addNewProduct,
       }}
     >
       {children}

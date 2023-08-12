@@ -33,6 +33,11 @@ export const productsReducer = (state, action) => {
         ...state,
         filters: { ...state.filters, sortBy: action.payload },
       };
+    case actionTypes.ADD_NEW_PRODUCT:
+      return {
+        ...state,
+        productsList: action.payload,
+      };
     default:
       return { ...state };
   }
