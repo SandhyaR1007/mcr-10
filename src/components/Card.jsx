@@ -8,7 +8,7 @@ const Card = ({
   return (
     <div
       className={`p-5 bg-gray-200 shadow-md rounded-md flex flex-col items-center justify-center ${
-        clickHandler && "cursor-pointer"
+        clickHandler ? "cursor-pointer" : ""
       }`}
       onClick={() => {
         if (clickHandler) {
