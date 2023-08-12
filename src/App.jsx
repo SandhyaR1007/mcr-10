@@ -1,5 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import { Dashboard, Departments, ProductDetails, Products } from "./pages";
+import {
+  Dashboard,
+  Departments,
+  NewProduct,
+  ProductDetails,
+  Products,
+} from "./pages";
 import Sidebar from "./components/Sidebar";
 
 const App = () => {
@@ -17,6 +23,7 @@ const App = () => {
             path="/productDetails/:productId"
             element={<ProductDetails />}
           />
+          <Route path="/addNewProduct" element={<NewProduct />} />
         </Routes>
       </main>
     </div>
