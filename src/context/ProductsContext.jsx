@@ -7,15 +7,16 @@ const ProductsContext = createContext();
 export const ProductsProvider = ({ children }) => {
   const { filterByDepartment, filterByStock, sortByCategory } = useFilter();
   const [state, dispatch] = useReducer(productsReducer, initialState);
-  const dashboardAnalytics = state.productsList.reduce(
+  const dashboardAnalytics = state?.productsList.reduce(
     (acc, curr) => ({
       ...acc,
-      total: acc.total + curr.stock,
-      delivered: acc?.delivered + curr?.delivered,
+      total: acc?.total + Number(curr?.stock),
+      delivered: acc?.delivered + Number(curr?.delivered),
       lowStock: curr?.stock <= 10 ? acc?.lowStock + 1 : acc?.lowStock,
     }),
     { total: 0, delivered: 0, lowStock: 0 }
   );
+  console.log(dashboardAnalytics.total);
   const updateDepartment = (selectedDepartment) => {
     dispatch({
       type: actionTypes.FILTER_BY_DEPARTMENT,

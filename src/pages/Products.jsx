@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useProductsContext } from "../context/ProductsContext";
 import { columns } from "../utils/constants";
 import { DepartmentFilter, SortFilter, StockFilter } from "../components";
+import { useEffect } from "react";
 
 const transformData = (key, data) => {
   if (key === "imageUrl") {
@@ -22,7 +23,13 @@ const transformData = (key, data) => {
 };
 
 const Products = () => {
-  const { filteredProducts } = useProductsContext();
+  const { filteredProducts, updateDepartment } = useProductsContext();
+  const location = useLocation();
+  useEffect(() => {
+    if (location?.state?.department) {
+      updateDepartment(location?.state?.department);
+    }
+  }, []);
 
   return (
     <div className="py-3">

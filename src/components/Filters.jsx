@@ -9,7 +9,7 @@ export const DepartmentFilter = () => {
   return (
     <select
       className="border rounded-md p-1 text-sm cursor-pointer"
-      defaultValue={department}
+      value={department}
       onChange={(e) => updateDepartment(e.target.value)}
     >
       {["All Departments", ...departments]?.map((data) => (
