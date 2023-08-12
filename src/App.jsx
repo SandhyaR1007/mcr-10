@@ -1,7 +1,22 @@
-import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { Dashboard, Departments, Products } from "./pages";
+import Sidebar from "./components/Sidebar";
 
 const App = () => {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <div className="flex gap-3 ">
+      <aside className="w-[15vw] bg-neutral-900 h-screen">
+        <Sidebar />
+      </aside>
+      <main className="w-[85vw] px-1">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/departments" element={<Departments />} />
+          <Route path="/products" element={<Products />} />
+        </Routes>
+      </main>
+    </div>
+  );
 };
 
 export default App;
