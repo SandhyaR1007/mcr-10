@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Dashboard, Departments, Products } from "./pages";
+import { Dashboard, Departments, ProductDetails, Products } from "./pages";
 import Sidebar from "./components/Sidebar";
 
 const App = () => {
@@ -13,6 +13,10 @@ const App = () => {
           <Route path="/" element={<Dashboard />} />
           <Route path="/departments" element={<Departments />} />
           <Route path="/products" element={<Products />} />
+          <Route
+            path="/productDetails/:productId"
+            element={<ProductDetails />}
+          />
         </Routes>
       </main>
     </div>
