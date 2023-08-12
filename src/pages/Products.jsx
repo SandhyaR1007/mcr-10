@@ -8,7 +8,10 @@ const transformData = (key, data) => {
     return <img className="w-24 h-24" src={data[key]} alt={data?.name} />;
   } else if (key === "name") {
     return (
-      <Link to="/" className="text-blue-600 underline">
+      <Link
+        to={`/productDetails/${data.id}`}
+        className="text-blue-600 underline"
+      >
         {data[key]}
       </Link>
     );
