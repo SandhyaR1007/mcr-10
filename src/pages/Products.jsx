@@ -31,7 +31,9 @@ const Products = () => {
         <DepartmentFilter />
         <StockFilter />
         <SortFilter />
-        <button>New</button>
+        <button className="bg-blue-500 text-white px-5 py-1 rounded-sm">
+          <Link to="/addNewProduct">New</Link>
+        </button>
       </nav>
       <table className="border rounded-md">
         <thead>
