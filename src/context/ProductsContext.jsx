@@ -16,7 +16,7 @@ export const ProductsProvider = ({ children }) => {
     }),
     { total: 0, delivered: 0, lowStock: 0 }
   );
-  console.log(dashboardAnalytics.total);
+
   const updateDepartment = (selectedDepartment) => {
     dispatch({
       type: actionTypes.FILTER_BY_DEPARTMENT,

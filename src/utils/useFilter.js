@@ -12,8 +12,6 @@ export const useFilter = () => {
       : productsData;
   };
   const sortByCategory = (productsData, selectedCategory) => {
-    console.log({ selectedCategory });
-
     return selectedCategory
       ? selectedCategory === "name"
         ? [...productsData].sort((a, b) => {
